@@ -1,0 +1,9 @@
+.navbar-dark .navbar-nav .nav-link.active{
+    color:rgb(112, 111, 111);
+    background-color: rgb(235, 233, 233);
+    border-radius: 4px;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color:white;
+}

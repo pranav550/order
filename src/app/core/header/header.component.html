@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="javascript:void(0)"><img src="../assets/images/7-2-customer-high-quality-png.png"
+            width="35" height="35" class="d-inline-block align-top" alt="">Customer Manager</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" *ngIf=auth.isUserLogin() routerLink="customers/card-view"
+                    routerLinkActive="active">Customers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf=!auth.isUserLogin() routerLink="login" routerLinkActive="active">Login </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf=auth.isUserLogin() (click)="logout()" routerLinkActive="active">Logout </a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,18 @@
+.error{
+    color: red;
+}
+
+.center_div{
+    margin: 0 auto;
+    width:35% /* value of your choice which suits your alignment */    
+}
+
+.hearderEdit{
+    color:white;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.labelEdit{
+    color:rgb(112, 111, 111);
+}

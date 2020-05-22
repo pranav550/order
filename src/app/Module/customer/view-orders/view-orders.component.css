@@ -1,0 +1,4 @@
+
+.table tfoot > tr > td { 
+	border-top  : 2px solid #333;
+}

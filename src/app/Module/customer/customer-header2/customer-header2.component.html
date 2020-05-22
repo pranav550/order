@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" routerLink="/" style="color: black; font-weight: bold;">
+        <img src="../assets/images/unnamed (1).png" width="40" height="40" class="d-inline-block" alt="">
+        Customer Information</a>
+</nav>
+
+<ul class="nav" style="margin-left:12px ;">
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/customers/customer-details"><i class="fas fa-list"></i>
+            Customer Details</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/customers/view-orders"><i class="fas fa-tags"></i>
+            Customer Orders</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/customers/edit-customer"><i class="fas fa-edit"></i>
+            Edit Customers</a>
+    </li>
+
+</ul>
+
+
+<router-outlet></router-outlet>

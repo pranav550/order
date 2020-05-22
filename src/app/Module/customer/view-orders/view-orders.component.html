@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Orders for {{user.name}}</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{p.product_name}}</td>
+      <td style="text-align: right;">{{p.price}} <i class="fa">&#xf156;</i></td>
+
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td> Total Price: </td>
+      <td style="text-align: right;">{{priceTotal}} <i class="fa">&#xf156;</i> </td>
+
+    </tr>
+  </tfoot>
+</table>

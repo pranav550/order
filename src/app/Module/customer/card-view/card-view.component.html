@@ -1,0 +1,76 @@
+<div class="filter-right ">
+
+    <input type="text" name="search1" [(ngModel)]="search1" placeholder="Filter" (ngModelChange)="findSearch(search1)">
+
+</div>
+<br />
+<div class="row" *ngIf="!searchText">
+    <div class="col-sm-3 cardPadding" *ngFor="let customer of allCustomer | paginate: { id: 'listing_pagination',
+    itemsPerPage: 8,
+    currentPage: page,
+    totalItems: totalRecords }">
+
+        <div class="card">
+            <div class="card-header bg-primary headingEdit">
+                <span (click)="getDetails(customer)">{{customer.name}}</span>
+                <span class="spanEdit"><i (click)="getCustomer(customer)" class="fas fa-edit"></i> <i
+                        class="fas fa-trash ml-2" (click)="deleteCustomer(customer)"></i></span>
+            </div>
+            <div class="card-body row ">
+                <div class="col" style="padding-right:0;">
+                    <img width="75" height="75" src="{{customer.image}}" alt="Card image">
+                </div>
+                <div class="col" style="padding-left:0;">
+                    {{customer.address}} <br>
+                    {{customer.city}}<br>
+                    <a routerLink="/customers/view-orders" (click)="getOrders(customer)" class="aEdit"> View Orders</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row" *ngIf="searchText?.length>0">
+    <div class="col-sm-3 cardPadding" *ngFor="let customer of result | paginate: { id: 'listing_pagination',
+    itemsPerPage: 8,
+    currentPage: page,
+    totalItems: result }">
+        <div class="card">
+            <div class="card-header bg-primary headingEdit">
+                <span (click)="getDetails(customer)">{{customer.name}}</span>
+                <span class="spanEdit"><i (click)="getCustomer(customer)" class="fas fa-edit"></i><i
+                        class="fas fa-trash ml-2" (click)="deleteCustomer(customer)"></i></span>
+            </div>
+            <div class="card-body row ">
+                <div class="col" style="padding-right:0;">
+                    <img width="75" height="75" src="{{customer.image}}" alt="Card image">
+                </div>
+                <div class="col" style="padding-left:0;">
+                    {{customer.address}} <br>
+                    {{customer.city}}<br>
+                    <a routerLink="/customers/view-orders" (click)="getOrders(customer)" class="aEdit"> View Orders</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h3>{{errorMsg}}</h3>
+
+
+<pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"
+    *ngIf="!searchText || totalRecords?.length>0">
+</pagination-controls>
+
+
+<pagination-controls id="listing_pagination" maxSize="8" directionLinks="true" (pageChange)="page = $event"
+    *ngIf="searchText?.length>0">
+</pagination-controls>
+
+<ngx-spinner [fullScreen]="true" type="ball-spin-clockwise" size="medium"></ngx-spinner>

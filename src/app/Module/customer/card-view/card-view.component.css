@@ -1,0 +1,26 @@
+.cardPadding{
+    padding-top: 15px;
+}
+
+.aEdit{
+    font-size: small;
+    text-decoration: underline;
+}
+
+.spanEdit{
+    float: right;
+}
+
+.headingEdit{
+    font-weight: bold;
+}
+
+span{
+    color: white;
+}
+
+.filter-right{
+   
+   float: right;
+}
+

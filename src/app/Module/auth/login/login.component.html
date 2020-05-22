@@ -1,0 +1,42 @@
+<div class="alert alert-danger center_div mt-5 mb-sm-5" role="alert" *ngIf="alertDisplay">
+    {{msg}}
+</div>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="center_div mt-5 mb-sm-5">
+        <div class="card card-outline-secondary">
+            <div class="card-header bg-primary">
+                <h3 class="mb-0 hearderEdit">Member Login</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="labelEdit"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" class="form-control" name="email" [(ngModel)]="user.email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel" required>
+                    <div *ngIf="(email.invalid ) && (email.dirty || email.touched || !isValidFormSubmitted)"
+                        class="error">
+                        <div *ngIf="email['errors'].required">email is required</div>
+                        <div *ngIf="email['errors'].pattern">email is not valid</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="labelEdit"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="user.password"
+                        pattern="(?=.*[a-z])(?=.*[0-9])(?=.*[$@^$#&!%*?&])[A-Za-zd$#%^&*@?].{8,}" #password="ngModel"
+                        required>
+                    <div *ngIf="(password.invalid ) && (password.dirty || password.touched || !isValidFormSubmitted)"
+                        class="error">
+                        <div *ngIf="password['errors'].required">password is required</div>
+                        <div *ngIf="password['errors'].pattern && password.touched">
+                            password is not valid
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </div>
+
+</form>

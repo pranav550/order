@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Customers</th>
+                <th>Customer Name </th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of listCustomer | paginate: { id: 'listing_pagination',
+            itemsPerPage: 5,
+            currentPage: page,
+            totalItems: totalRecords }">
+                <td><img width="40" height="40" src="{{customer.image}}" alt="Card image"></td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.address}}</td>
+                <td><i (click)="getCustomer(customer)" class="fas fa-edit"></i> <i class="fas fa-trash ml-3"
+                        (click)="deleteCustomer(customer)"></i> </td>
+            </tr>
+            <tr *ngIf="errorFlag" >
+                <td>{{errorMsg}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> 
+
+        </tbody>
+        <div>
+            <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </table>
+</div>
+
+

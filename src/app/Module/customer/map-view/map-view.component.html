@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-body row ">
+                <div class="col-sm-2" style="padding-right:0;">
+                    <img width="90" height="90" src="../assets/images/teacher-295387_960_720.png" alt="Card image">
+                </div>
+                <div class="col-sm-10" style="padding-left:0;">
+                    <p> Ted James</p>
+                    Address : abc , xyz, pqr <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <agm-map style="height: 400px" [latitude]="51.673858" [longitude]="7.815982">
+        <!-- <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"> -->
+          <agm-marker [latitude]="51.673858" [longitude]="7.815982">
+          </agm-marker> 
+        <!-- </agm-marker-cluster> -->
+      </agm-map>
+
+
+</div>

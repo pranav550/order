@@ -1,0 +1,25 @@
+{
+    "candidates": [
+        {
+            "formatted_address": "52 Mercer St, New York, NY 10013, United States",
+            "geometry": {
+                "location": {
+                    "lat": 40.7217197,
+                    "lng": -74.0008167
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.72313687989272,
+                        "lng": -73.99952792010728
+                    },
+                    "southwest": {
+                        "lat": 40.72043722010727,
+                        "lng": -74.00222757989273
+                    }
+                }
+            },
+            "name": "The Wing SoHo"
+        }
+    ],
+    "status": "OK"
+}

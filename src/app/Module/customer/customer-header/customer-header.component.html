@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" routerLink="/" style="color: black; font-weight: bold;">
+        <img src="../assets/images/unnamed (1).png" width="40" height="40" class="d-inline-block" alt="">
+        Customers</a>
+</nav>
+
+<ul class="nav" style="margin-left:12px ;">
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="card-view"><i class="fas fa-th-large"></i>
+            Card-View</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="list-view"><i class="fas fa-align-justify"></i>
+            List-View</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="map-view"><i class="fas fa-map-marker"></i>
+            Map-View</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="add-customer"><i class="fas fa-plus"></i> New
+            Customer</a>
+    </li>
+</ul>
+
+
+<router-outlet></router-outlet>
